@@ -60,16 +60,43 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-// while((humanScore || computerScore) < 4) {
-//     playRound(getHumanChoice(), getComputerChoice());
+// function playGame() {
+//     for(let i = 0; i <= 4; i++) {
+//         playRound(getHumanChoice(), getComputerChoice());
+//     }
+//     console.log(`Total Score: HUMAN ${humanScore} and COMPUTER ${computerScore}`);
 // }
 
-function playGame() {
-    for(let i = 0; i <= 4; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-    console.log(`Total Score: HUMAN ${humanScore} and COMPUTER ${computerScore}`);
-}
+// playGame();
 
-playGame();
 
+const rock_button = document.createElement('button');
+rock_button.textContent = 'ROCK';
+
+const paper_button = document.createElement('button');
+paper_button.textContent = "PAPER";
+
+const scissors_button = document.createElement('button');
+scissors_button.textContent = "SCISSORS";
+
+
+
+
+rock_button.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+});
+// paper_button.addEventListener('click', playRound('paper', getComputerChoice()));
+// scissors_button.addEventListener('click', playRound('scissors', getComputerChoice()));
+
+paper_button.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+});
+
+scissors_button.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+});
+
+
+document.body.appendChild(rock_button);
+document.body.appendChild(paper_button);
+document.body.appendChild(scissors_button);
